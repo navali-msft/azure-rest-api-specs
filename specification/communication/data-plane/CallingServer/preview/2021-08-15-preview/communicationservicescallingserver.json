@@ -542,7 +542,7 @@
         ],
         "summary": "Remove participant from the call using identifier.",
         "description": "Remove participant from the call using identifier.",
-        "operationId": "CallConnections_RemoveParticipantById",
+        "operationId": "ServerCalls_RemoveParticipantById",
         "parameters": [
           {
             "name": "serverCallId",
