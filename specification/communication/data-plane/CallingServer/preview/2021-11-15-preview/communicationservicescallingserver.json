@@ -642,6 +642,119 @@
         }
       }
     },
+    "/calling/callConnections/{callConnectionId}/:status": {
+      "post": {
+        "tags": [
+          "CallConnection"
+        ],
+        "summary": "Get the current status of the call.",
+        "description": "Get the current status of the call.",
+        "operationId": "CallConnections_ConnectionStatus",
+        "parameters": [
+          {
+            "name": "callConnectionId",
+            "in": "path",
+            "description": "The call connection id.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Returns the get call response.",
+            "schema": {
+              "$ref": "#/definitions/CallConnectionProperties"
+            }
+          },
+          "200": {
+            "description": "Returns the get call response.",
+            "schema": {
+              "$ref": "#/definitions/CallConnectionProperties"
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        },
+        "x-ms-examples": {
+          "Get the current status of the call.": {
+            "$ref": "./examples/CallConnections_ConnectionStatus.json"
+          }
+        }
+      }
+    },
+    "/calling/callConnections/{callConnectionId}/operations/{operationId}": {
+      "post": {
+        "tags": [
+          "CallConnection"
+        ],
+        "summary": "Get the operation status",
+        "description": "Get the operation status",
+        "operationId": "Operation_GetOperation",
+        "parameters": [
+          {
+            "name": "callConnectionId",
+            "in": "path",
+            "description": "The call connection id.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "operationId",
+            "in": "path",
+            "description": "The operation id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the get operation response.",
+            "schema": {
+              "$ref": "#/definitions/OperationResponse"
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        },
+        "x-ms-examples": {
+          "Get the operation status": {
+            "$ref": "./examples/Operation_GetOperation.json"
+          }
+        }
+      }
+    },
     "/calling/participants:getAll": {
       "post": {
         "tags": [
@@ -2466,6 +2579,30 @@
         }
       }
     },
+    "OperationResponse": {
+      "description": "The base class for all the responses for any Acs Api operation",
+      "required": [
+        "status"
+      ],
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "description": "The operation id.",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/CallingOperationStatus"
+        },
+        "operationContext": {
+          "description": "The operation context provided by client.",
+          "type": "string"
+        },
+        "resultInfo": {
+          "$ref": "#/definitions/CallingOperationResultDetails",
+          "description": "The result info for the operation."
+        }
+      }
+    },
     "GetAllParticipantsWithCallLocatorRequest": {
       "description": "The request payload for get all participants.",
       "required": [
@@ -3156,7 +3293,6 @@
       }
     },
     "AddParticipantResultEvent": {
-      "description": "The add participant result event.",
       "required": [
         "status"
       ],
