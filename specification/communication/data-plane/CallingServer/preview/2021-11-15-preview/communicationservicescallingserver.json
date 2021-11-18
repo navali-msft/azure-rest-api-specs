@@ -205,7 +205,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "202": {
             "description": "Returns the create call response.",
             "schema": {
               "$ref": "#/definitions/CreateCallResult"
@@ -727,6 +727,12 @@
         ],
         "responses": {
           "200": {
+            "description": "Returns the get operation response.",
+            "schema": {
+              "$ref": "#/definitions/OperationResponse"
+            }
+          },
+          "202": {
             "description": "Returns the get operation response.",
             "schema": {
               "$ref": "#/definitions/OperationResponse"
