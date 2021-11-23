@@ -239,7 +239,10 @@
             "$ref": "./examples/CallConnections_CreateCall.json"
           }
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        }
       }
     },
     "/calling/callConnections/{callConnectionId}": {
