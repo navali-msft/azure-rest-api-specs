@@ -209,6 +209,12 @@
             "description": "Returns the create call response.",
             "schema": {
               "$ref": "#/definitions/CreateCallResult"
+            },
+            "headers": {
+              "Location": {
+                "description": "The location.",
+                "type": "string"
+              }
             }
           },
           "400": {
@@ -407,6 +413,12 @@
             "description": "Returns the play audio response.",
             "schema": {
               "$ref": "#/definitions/PlayAudioResult"
+            },
+            "headers": {
+              "Location": {
+                "description": "The location.",
+                "type": "string"
+              }
             }
           },
           "400": {
