@@ -211,6 +211,10 @@
               "$ref": "#/definitions/CreateCallResult"
             },
             "headers": {
+              "Operation-Location": {
+                "description": "URL to query for status of the operation.",
+                "type": "string"
+              },
               "Location": {
                 "description": "The location.",
                 "type": "string"
