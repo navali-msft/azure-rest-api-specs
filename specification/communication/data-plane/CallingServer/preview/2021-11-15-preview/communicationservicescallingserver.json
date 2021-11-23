@@ -228,7 +228,8 @@
           "Create a new call.": {
             "$ref": "./examples/CallConnections_CreateCall.json"
           }
-        }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/calling/callConnections/{callConnectionId}": {
@@ -428,7 +429,8 @@
           "Play audio in the call.": {
             "$ref": "./examples/CallConnections_PlayAudio.json"
           }
-        }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/calling/callConnections/{callConnectionId}/:cancelAllMediaOperations": {
@@ -643,7 +645,7 @@
       }
     },
     "/calling/callConnections/{callConnectionId}/:status": {
-      "post": {
+      "get": {
         "tags": [
           "CallConnection"
         ],
@@ -699,7 +701,7 @@
       }
     },
     "/calling/callConnections/{callConnectionId}/operations/{operationId}": {
-      "post": {
+      "get": {
         "tags": [
           "CallConnection"
         ],
