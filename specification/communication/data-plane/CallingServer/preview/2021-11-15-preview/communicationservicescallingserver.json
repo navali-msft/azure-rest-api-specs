@@ -211,12 +211,16 @@
               "$ref": "#/definitions/CreateCallResult"
             },
             "headers": {
+              "Location": {
+                "description": "The location.",
+                "type": "string"
+              },
               "Operation-Location": {
                 "description": "URL to query for status of the operation.",
                 "type": "string"
               },
-              "Location": {
-                "description": "The location.",
+              "operation-id": {
+                "description": "The operation id.",
                 "type": "string"
               }
             }
@@ -234,14 +238,14 @@
             "$ref": "#/responses/500"
           }
         },
+        "x-ms-long-running-operation": true,
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
         "x-ms-examples": {
           "Create a new call.": {
             "$ref": "./examples/CallConnections_CreateCall.json"
           }
-        },
-        "x-ms-long-running-operation": true,
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "location"
         }
       }
     },
