@@ -215,12 +215,8 @@
                 "description": "The location.",
                 "type": "string"
               },
-              "Operation-Location": {
-                "description": "URL to query for status of the operation.",
-                "type": "string"
-              },
-              "operation-id": {
-                "description": "The operation id.",
+              "callConnectionId": {
+                "description": "The call connection id.",
                 "type": "string"
               }
             }
